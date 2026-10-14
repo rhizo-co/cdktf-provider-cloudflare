@@ -1,0 +1,399 @@
+// https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints
+// generated from terraform resource schema
+
+import { Construct } from 'constructs';
+import * as cdktf from 'cdktf';
+
+// Configuration
+
+export interface DataCloudflareZeroTrustGatewayProxyEndpointsConfig extends cdktf.TerraformMetaArguments {
+  /**
+  * Specify the Cloudflare account identifier.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints#account_id DataCloudflareZeroTrustGatewayProxyEndpoints#account_id}
+  */
+  readonly accountId?: string;
+  /**
+  * Sort direction. Only takes effect when `order_by` is also provided; it
+  * is ignored otherwise. When `direction` is omitted the effective
+  * direction is field-specific: `created_at` and `updated_at` default to
+  * descending (newest first); `name` defaults to ascending.
+  *   * `asc` — ascending.
+  *   * `desc` — descending.
+  * Available values: "asc", "desc".
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints#direction DataCloudflareZeroTrustGatewayProxyEndpoints#direction}
+  */
+  readonly direction?: string;
+  /**
+  * Filter the returned proxy endpoints by one or more `field:value` pairs.
+  * Repeat the parameter to apply multiple filters; they are combined with
+  * logical AND (an endpoint must satisfy every filter to be returned).
+  * 
+  * Supported fields and their matching behaviour:
+  *   * `name` — case-insensitive substring match on the endpoint name.
+  *   * `id` — substring match on the endpoint ID (UUID), with or without dashes.
+  *   * `kind` — exact match on the endpoint kind. The value must be `ip` or `identity`; any other value returns `400`.
+  * 
+  * Each entry must match one of the per-field patterns below: the field
+  * must be one of `name`, `id`, or `kind`; `name`/`id` accept any value,
+  * while `kind` only accepts `ip` or `identity`.
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints#filter DataCloudflareZeroTrustGatewayProxyEndpoints#filter}
+  */
+  readonly filter?: string[];
+  /**
+  * Max items to fetch, default: 1000
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints#max_items DataCloudflareZeroTrustGatewayProxyEndpoints#max_items}
+  */
+  readonly maxItems?: number;
+  /**
+  * Field to sort the returned endpoints by. When omitted, the order of
+  * results is unspecified. Supported values:
+  *   * `name` — sort alphabetically by endpoint name.
+  *   * `created_at` — sort by creation time; defaults to descending unless `direction` is set.
+  *   * `updated_at` — sort by last-modified time; defaults to descending unless `direction` is set.
+  * Available values: "name", "created_at", "updated_at".
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints#order_by DataCloudflareZeroTrustGatewayProxyEndpoints#order_by}
+  */
+  readonly orderBy?: string;
+  /**
+  * Case-insensitive substring match on the endpoint name. When combined
+  * with `filter`, both must match (logical AND).
+  *
+  * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints#search DataCloudflareZeroTrustGatewayProxyEndpoints#search}
+  */
+  readonly search?: string;
+}
+export interface DataCloudflareZeroTrustGatewayProxyEndpointsResult {
+}
+
+export function dataCloudflareZeroTrustGatewayProxyEndpointsResultToTerraform(struct?: DataCloudflareZeroTrustGatewayProxyEndpointsResult): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  return {
+  }
+}
+
+
+export function dataCloudflareZeroTrustGatewayProxyEndpointsResultToHclTerraform(struct?: DataCloudflareZeroTrustGatewayProxyEndpointsResult): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
+export class DataCloudflareZeroTrustGatewayProxyEndpointsResultOutputReference extends cdktf.ComplexObject {
+  private isEmptyObject = false;
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param complexObjectIndex the index of this item in the list
+  * @param complexObjectIsFromSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  public constructor(terraformResource: cdktf.IInterpolatingParent, terraformAttribute: string, complexObjectIndex: number, complexObjectIsFromSet: boolean) {
+    super(terraformResource, terraformAttribute, complexObjectIsFromSet, complexObjectIndex);
+  }
+
+  public get internalValue(): DataCloudflareZeroTrustGatewayProxyEndpointsResult | undefined {
+    let hasAnyValues = this.isEmptyObject;
+    const internalValueResult: any = {};
+    return hasAnyValues ? internalValueResult : undefined;
+  }
+
+  public set internalValue(value: DataCloudflareZeroTrustGatewayProxyEndpointsResult | undefined) {
+    if (value === undefined) {
+      this.isEmptyObject = false;
+    }
+    else {
+      this.isEmptyObject = Object.keys(value).length === 0;
+    }
+  }
+
+  // created_at - computed: true, optional: false, required: false
+  public get createdAt() {
+    return this.getStringAttribute('created_at');
+  }
+
+  // id - computed: true, optional: false, required: false
+  public get id() {
+    return this.getStringAttribute('id');
+  }
+
+  // ips - computed: true, optional: false, required: false
+  public get ips() {
+    return this.getListAttribute('ips');
+  }
+
+  // kind - computed: true, optional: false, required: false
+  public get kind() {
+    return this.getStringAttribute('kind');
+  }
+
+  // name - computed: true, optional: false, required: false
+  public get name() {
+    return this.getStringAttribute('name');
+  }
+
+  // subdomain - computed: true, optional: false, required: false
+  public get subdomain() {
+    return this.getStringAttribute('subdomain');
+  }
+
+  // updated_at - computed: true, optional: false, required: false
+  public get updatedAt() {
+    return this.getStringAttribute('updated_at');
+  }
+}
+
+export class DataCloudflareZeroTrustGatewayProxyEndpointsResultList extends cdktf.ComplexList {
+
+  /**
+  * @param terraformResource The parent resource
+  * @param terraformAttribute The attribute on the parent resource this class is referencing
+  * @param wrapsSet whether the list is wrapping a set (will add tolist() to be able to access an item via an index)
+  */
+  constructor(protected terraformResource: cdktf.IInterpolatingParent, protected terraformAttribute: string, protected wrapsSet: boolean) {
+    super(terraformResource, terraformAttribute, wrapsSet)
+  }
+
+  /**
+  * @param index the index of the item to return
+  */
+  public get(index: number): DataCloudflareZeroTrustGatewayProxyEndpointsResultOutputReference {
+    return new DataCloudflareZeroTrustGatewayProxyEndpointsResultOutputReference(this.terraformResource, this.terraformAttribute, index, this.wrapsSet);
+  }
+}
+
+/**
+* Represents a {@link https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints cloudflare_zero_trust_gateway_proxy_endpoints}
+*/
+export class DataCloudflareZeroTrustGatewayProxyEndpoints extends cdktf.TerraformDataSource {
+
+  // =================
+  // STATIC PROPERTIES
+  // =================
+  public static readonly tfResourceType = "cloudflare_zero_trust_gateway_proxy_endpoints";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataCloudflareZeroTrustGatewayProxyEndpoints resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataCloudflareZeroTrustGatewayProxyEndpoints to import
+  * @param importFromId The id of the existing DataCloudflareZeroTrustGatewayProxyEndpoints that should be imported. Refer to the {@link https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataCloudflareZeroTrustGatewayProxyEndpoints to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "cloudflare_zero_trust_gateway_proxy_endpoints", importId: importFromId, provider });
+      }
+
+  // ===========
+  // INITIALIZER
+  // ===========
+
+  /**
+  * Create a new {@link https://registry.terraform.io/providers/cloudflare/cloudflare/5.27.0/docs/data-sources/zero_trust_gateway_proxy_endpoints cloudflare_zero_trust_gateway_proxy_endpoints} Data Source
+  *
+  * @param scope The scope in which to define this construct
+  * @param id The scoped construct ID. Must be unique amongst siblings in the same scope
+  * @param options DataCloudflareZeroTrustGatewayProxyEndpointsConfig = {}
+  */
+  public constructor(scope: Construct, id: string, config: DataCloudflareZeroTrustGatewayProxyEndpointsConfig = {}) {
+    super(scope, id, {
+      terraformResourceType: 'cloudflare_zero_trust_gateway_proxy_endpoints',
+      terraformGeneratorMetadata: {
+        providerName: 'cloudflare',
+        providerVersion: '5.27.0',
+        providerVersionConstraint: '~> 5.27.0'
+      },
+      provider: config.provider,
+      dependsOn: config.dependsOn,
+      count: config.count,
+      lifecycle: config.lifecycle,
+      provisioners: config.provisioners,
+      connection: config.connection,
+      forEach: config.forEach
+    });
+    this._accountId = config.accountId;
+    this._direction = config.direction;
+    this._filter = config.filter;
+    this._maxItems = config.maxItems;
+    this._orderBy = config.orderBy;
+    this._search = config.search;
+  }
+
+  // ==========
+  // ATTRIBUTES
+  // ==========
+
+  // account_id - computed: false, optional: true, required: false
+  private _accountId?: string; 
+  public get accountId() {
+    return this.getStringAttribute('account_id');
+  }
+  public set accountId(value: string) {
+    this._accountId = value;
+  }
+  public resetAccountId() {
+    this._accountId = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get accountIdInput() {
+    return this._accountId;
+  }
+
+  // direction - computed: false, optional: true, required: false
+  private _direction?: string; 
+  public get direction() {
+    return this.getStringAttribute('direction');
+  }
+  public set direction(value: string) {
+    this._direction = value;
+  }
+  public resetDirection() {
+    this._direction = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get directionInput() {
+    return this._direction;
+  }
+
+  // filter - computed: false, optional: true, required: false
+  private _filter?: string[]; 
+  public get filter() {
+    return this.getListAttribute('filter');
+  }
+  public set filter(value: string[]) {
+    this._filter = value;
+  }
+  public resetFilter() {
+    this._filter = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get filterInput() {
+    return this._filter;
+  }
+
+  // max_items - computed: false, optional: true, required: false
+  private _maxItems?: number; 
+  public get maxItems() {
+    return this.getNumberAttribute('max_items');
+  }
+  public set maxItems(value: number) {
+    this._maxItems = value;
+  }
+  public resetMaxItems() {
+    this._maxItems = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get maxItemsInput() {
+    return this._maxItems;
+  }
+
+  // order_by - computed: false, optional: true, required: false
+  private _orderBy?: string; 
+  public get orderBy() {
+    return this.getStringAttribute('order_by');
+  }
+  public set orderBy(value: string) {
+    this._orderBy = value;
+  }
+  public resetOrderBy() {
+    this._orderBy = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get orderByInput() {
+    return this._orderBy;
+  }
+
+  // result - computed: true, optional: false, required: false
+  private _result = new DataCloudflareZeroTrustGatewayProxyEndpointsResultList(this, "result", false);
+  public get result() {
+    return this._result;
+  }
+
+  // search - computed: false, optional: true, required: false
+  private _search?: string; 
+  public get search() {
+    return this.getStringAttribute('search');
+  }
+  public set search(value: string) {
+    this._search = value;
+  }
+  public resetSearch() {
+    this._search = undefined;
+  }
+  // Temporarily expose input value. Use with caution.
+  public get searchInput() {
+    return this._search;
+  }
+
+  // =========
+  // SYNTHESIS
+  // =========
+
+  protected synthesizeAttributes(): { [name: string]: any } {
+    return {
+      account_id: cdktf.stringToTerraform(this._accountId),
+      direction: cdktf.stringToTerraform(this._direction),
+      filter: cdktf.listMapper(cdktf.stringToTerraform, false)(this._filter),
+      max_items: cdktf.numberToTerraform(this._maxItems),
+      order_by: cdktf.stringToTerraform(this._orderBy),
+      search: cdktf.stringToTerraform(this._search),
+    };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      account_id: {
+        value: cdktf.stringToHclTerraform(this._accountId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      direction: {
+        value: cdktf.stringToHclTerraform(this._direction),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._filter),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      max_items: {
+        value: cdktf.numberToHclTerraform(this._maxItems),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      order_by: {
+        value: cdktf.stringToHclTerraform(this._orderBy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      search: {
+        value: cdktf.stringToHclTerraform(this._search),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
+  }
+}
